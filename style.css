@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(27, 27, 27);
+    color: white;
+    background-image: url("./bg.jpg");
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+.card{
+    color: rgb(27, 27, 27);
+    background-color: transparent;
+}
+.card-body{
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    height: 100%;
+}
+.img-fluid{
+    height: 100%;
+    width: 115%;
+}
