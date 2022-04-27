@@ -29,7 +29,7 @@ const showMessage = () => {
     `
     <div style="height: 70vh;">
         <h5 class="text-center p-5 mb-2 bg-warning text-white rounded"> No hay más personajes </h5>
-        <button class="btn btn-info d-block mt-5 mx-auto pulse" onClick="showAll()">Mostrar todos los personajes</button>
+        <button class="btn btn-info d-block mt-5 mx-auto" onClick="showAll()">Mostrar todos los personajes</button>
     </div>
     `;
     find_input.disabled = true;
@@ -57,7 +57,7 @@ const createNode = ({id, image, name, species, status, origin, gender}) => {
             <div class="col-md-7">
                 <div class="card-body rounded-end">
                     <h5 class="card-title">${name}</h5>
-                    <p class="card-text"> ${status === "Alive" ? '<i class="fas fa-circle" style="color: rgb(85, 204, 68); font-size: 12px;"></i>' : '<i class="fas fa-circle" style="color: rgb(214, 61, 46); font-size: 12px;"></i>'}  Especie: ${species}</p>
+                    <p class="card-text"> ${status === "Alive" ? '<i class="fas fa-circle pe-2" style="color: rgb(85, 204, 68); font-size: 12px;"></i>' : '<i class="fas fa-circle pe-2" style="color: rgb(214, 61, 46); font-size: 12px;"></i>'}  Especie: ${species}</p>
                     <p class="card-text"> Género: ${gender}</p>
                     <p class="card-text">Origen: ${origin.name}</p>
                     <button class="btn btn-dark btn-block" onClick=deleteCharacter(${id}) >Borrar</button>
@@ -81,7 +81,7 @@ const searchCharacter = () => {
     if(index.length == 0){
         characters_div.innerHTML = 
         `<div style="height: 70vh;">
-            <h5 class="text-center p-5 mb-5 bg-warning text-white rounded w-50 mx-auto"> No hay resultados a tu búsqueda</h5>
+            <h5 class="text-center p-5 mb-5 bg-warning text-white rounded w-75 mx-auto"> No hay resultados a tu búsqueda</h5>
             <button class="btn btn-info d-block mt-5 mx-auto pulse" onClick="showAll()">Mostrar todos los personajes</button>
         </div>
         `;
@@ -91,7 +91,7 @@ const searchCharacter = () => {
             createNode(index[i])
         }
         characters_div.insertAdjacentHTML("beforeend", 
-        `<div>
+        `<div style="height : 70vh";>
             <button class="btn btn-primary d-block my-5 mx-auto" onClick="showAll()"> Ver todos los personajes </button>
         </div>
         `) ;
