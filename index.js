@@ -43,7 +43,15 @@ const deleteCharacter = (idCharacter) => {
     characters_array.length === 0 ? showMessage() : null;  
 };
 
-
+const iconCard = (x) => {
+    if(x === "Alive"){
+        return '<i class="fas fa-circle pe-2" style="color: rgb(85, 204, 68); font-size: 12px;"></i>';
+    }else if(x === "Dead"){
+        return '<i class="fas fa-circle pe-2" style="color: rgb(214, 61, 46); font-size: 12px;"></i>';
+    }else{
+        return '<i class="fas fa-circle pe-2" style="color: rgb(255, 255, 255); font-size: 12px;"></i>';
+    } 
+}
 const createNode = ({id, image, name, species, status, origin, gender}) => {
     
     const node = 
@@ -57,7 +65,8 @@ const createNode = ({id, image, name, species, status, origin, gender}) => {
             <div class="col-md-7">
                 <div class="card-body rounded-end">
                     <h5 class="card-title">${name}</h5>
-                    <p class="card-text"> ${status === "Alive" ? '<i class="fas fa-circle pe-2" style="color: rgb(85, 204, 68); font-size: 12px;"></i>' : '<i class="fas fa-circle pe-2" style="color: rgb(214, 61, 46); font-size: 12px;"></i>'}  Especie: ${species}</p>
+                    <h6 class="card-text"> 
+                    ${iconCard(status)} ${status} - Especie: ${species}</h6>
                     <p class="card-text"> Género: ${gender}</p>
                     <p class="card-text">Origen: ${origin.name}</p>
                     <button class="btn btn-dark btn-block" onClick=deleteCharacter(${id}) >Borrar</button>
